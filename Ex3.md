@@ -1,66 +1,75 @@
-# Ex.No3
-## Ex.Name: Write a C++ program to calculate the volume of a Box using static member variable.
+# Ex.No:3
+# Ex.Name:Write A CPP Program to create class Rectangle and calculate the volume of the rectangle, make use of static member variable in the class Rectangle.
+## Date:14/08/25
 
 ## Aim:
-To calculate the volume of multiple Box objects and count the number of objects using a static member variable.
+To write A CPP Program to create class Rectangle and calculate the volume of the rectangle, make use of static member variable in the class Rectangle.
+
 
 ## Algorithm:
-1. Start the program.  
-2. Define a class `Box` with members length, breadth, height, and a static counter.  
-3. Initialize counter as 0.  
-4. In the constructor, increment counter and display a message.  
-5. Define a function to calculate and print volume.  
-6. Display total objects created using the static variable.  
-7. End the program.  
+1. Start
+2. Define a class Rectangle with data members length and breadth, and a static data member count.
+3. Create a constructor to initialize length and breadth and increment count whenever a new object is created.
+4. Define a function to calculate area as length × breadth.
+5. Define a function to calculate volume as length × breadth × height.
+6. Define a static function to return the value of count.
+7. In main, create Rectangle objects, calculate and display their area and volume, and display the total number of objects created using the static member.
+8. End
+
+
 
 ## Program:
 ```cpp
 #include <iostream>
+ 
 using namespace std;
 
-class Box {
-    int l,b,h;
-    static int count;
-public:
-    Box(int x,int y,int z) {
-        l=x; b=y; h=z;
-        count++;
-        cout << "Constructor called." << endl;
-    }
-    void volume() {
-        cout << "Volume :" << l*b*h << endl;
-    }
-    static void displayCount() {
-        cout << "Total objects: " << count << endl;
-    }
+class Square {
+    public:
+        static int count;
+      
+      // Constructor definition
+      Square(double l,double b,double h) 
+      {
+          cout<<"Constructor called."<<endl;
+          length = l;
+          breadth = b;
+          height = h;
+          count++;
+      }
+      double Volume() 
+      {
+        return length*breadth*height;
+      }
+      
+   private:
+      double length;     // Length of a box
+      double breadth;    // Breadth of a box
+      double height;     // Height of a box
 };
-int Box::count=0;
-
-int main() {
-    int l1,b1,h1,l2,b2,h2;
-    cin >> l1 >> b1 >> h1;
-    cin >> l2 >> b2 >> h2;
-    Box b1Obj(l1,b1,h1);
-    b1Obj.volume();
-    Box b2Obj(l2,b2,h2);
-    b2Obj.volume();
-    Box::displayCount();
-    return 0;
+int Square::count;
+int main(void) 
+{
+    double l,b,h;
+    cin>>l>>b>>h;
+   Square obj1(l,b,h);
+   cout<<"Volume :"<<obj1.Volume()<<endl;
+   cin>>l>>b>>h;
+   Square obj2(l,b,h);
+   cout<<"Volume :"<<obj2.Volume()<<endl;
+   cout<<"Total objects: "<<Square::count<<endl;
+   return 0;
 }
 ```
 
 
 
 ## Output:
-```
-Constructor called.
-Volume :24
-Constructor called.
-Volume :210
-Total objects: 2
-```
+<img width="1188" height="437" alt="Screenshot 2025-09-08 111802" src="https://github.com/user-attachments/assets/e7c2e7af-5523-471c-8db0-7d863e83c1ac" />
+
+
+
 
 ## Result:
-
-<img width="860" height="511" alt="image" src="https://github.com/user-attachments/assets/b8f55323-3254-4ebe-9aea-135ab91a58ab" />
+The program successfully created class Rectangle and calculate the volume of the rectangle, make use of static member variable in the class Rectangle.
 
