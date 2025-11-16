@@ -1,45 +1,67 @@
-# Ex.No4
-## Ex.Name: Write a C++ program to add two numbers and three numbers using constructor overloading.
+# Ex.No:4
+# Ex.Name:Write a CPP Program to Overloadd the '-' operator i.e. a positive value should be turned into a negative value
+## Date:14/08/25
+
 ## Aim:
-To demonstrate constructor overloading by performing addition of two and three numbers.
+To write a CPP Program to Overload the '-' operator i.e. a positive value should be turned into a negative value
+
+
 
 ## Algorithm:
-1. Start the program.  
-2. Create a class `Addition` with constructors overloaded.  
-3. Constructor with 2 parameters adds two numbers and displays sum.  
-4. Constructor with 3 parameters adds three numbers and displays sum.  
-5. In `main()`, create objects with two and three values.  
-6. End the program.  
+1. Start
+2. Define a class with a data member to store a number.
+3. Create a constructor to initialize the number.
+4. Overload the unary - operator to change a positive number into its negative.
+5. Define a display function to show the number.
+6. In main, create an object, display the original value, apply the overloaded - operator, and display the result.
+7. End
+
 
 ## Program:
 ```cpp
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-class Addition {
-public:
-    Addition(int a, int b) {
-        cout << "The Sum is " << a+b << endl;
-    }
-    Addition(int a, int b, int c) {
-        cout << "The Sum is " << a+b+c << endl;
-    }
+class Negate
+{
+    int n;
+    public:
+    
+        Negate(int a){
+            n =a;
+        }
+        
+        void operator -()
+        {
+            n = -n;
+        }
+        
+        void display(){
+            cout<<n<<endl;
+        }
 };
 
-int main() {
-    Addition obj1(5,6);
-    Addition obj2(2,8,5);
-    return 0;
+int main()
+{
+    int n;
+    cin>>n;
+    Negate obj(n);
+    -obj;
+    obj.display();
 }
 ```
 
 
-
 ## Output:
-```
-The Sum is 11
-The Sum is 15
-```
+<img width="1196" height="313" alt="Screenshot 2025-09-08 114537" src="https://github.com/user-attachments/assets/1ee71399-bfed-4651-b3ed-189ebfea85ce" />
+
+
+
+
 ## Result:
-<img width="856" height="251" alt="image" src="https://github.com/user-attachments/assets/a2c90b2a-281c-4abe-8bba-6cbcbca7506e" />
+The program successfully demonstrates to Overload the '-' operator i.e. a positive value should be turned into a negative value
+
+
+
+
 
