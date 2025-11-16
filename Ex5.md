@@ -1,49 +1,75 @@
-# Ex.No5
-## Ex.Name: Write a C++ program to overload a function to perform sum of two integers and sum of three integers.
+# Ex.No:5
+# Ex.Name:Write a CPP Program to overload the first function to perform addition, second function to perform subtraction, third function to perform multiplication and the fourth function to perform division.
+## Date:14/08/25
+
 ## Aim:
-To demonstrate function overloading by calculating sum of two and three integers.
+To write a CPP Program to overload the first function to perform addition, second function to perform subtraction, third function to perform multiplication and the fourth function to perform division.
+
 
 ## Algorithm:
-1. Start the program.  
-2. Define two overloaded functions `sum()`, one with 2 parameters and another with 3 parameters.  
-3. Each function returns the sum of its arguments.  
-4. In `main()`, call both functions with appropriate arguments.  
-5. Print the results.  
-6. End the program.  
+1. Start
+2. Define a class Calculator with overloaded functions named operation for addition, subtraction, multiplication, and division.
+3. Implement the first operation function to add two integers.
+4. Implement the second operation function to subtract two floats.
+5. Implement the third operation function to multiply two doubles.
+6. Implement the fourth operation function to divide two integers with a check for division by zero.
+7. In main, create an object of Calculator.
+8. Call each overloaded function with appropriate arguments and display results.
+9. End
+
 
 ## Program:
 ```cpp
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int sum(int a, int b) {
-    return a+b;
-}
-int sum(int a, int b, int c) {
-    return a+b+c;
-}
+class Calculate
+{
+    public:
+        
+        Calculate(int n1,int n2){
+            cout<<"Sum of two Numbers="<<n1+n2<<endl;
+        }
+        
+        Calculate(float n1,float n2){
+            cout<<"Difference of two Numbers="<<n1-n2<<endl;
+        }
+        
+        Calculate(double n1,double n2){
+            cout<<"Product of two Numbers="<<n1*n2<<endl;
+        }
+        
+        Calculate(long n1,long n2){
+            cout<<"Division of two Numbers="<<n1/n2<<endl;
+        }
+};
 
-int main() {
-    int a,b,c;
-    cin >> a >> b;
-    cout << "Sum of two Numbers=" << sum(a,b) << endl;
-    cin >> a >> b >> c;
-    cout << "Sum of three Numbers=" << sum(a,b,c) << endl;
-    return 0;
+int main()
+{
+    int n1,n2;
+    cin>>n1>>n2;
+    Calculate obj1(n1,n2);
+    float a,b;
+    cin>>a>>b;
+    Calculate obj2(a,b);
+    double x,y;
+    cin>>x>>y;
+    Calculate obj3(x,y);
+    long c,d;
+    cin>>c>>d;
+    Calculate obj4(c,d);
 }
 ```
 
 
 
 ## Output:
-```
-10 20
-Sum of two Numbers=30
-10 20 30
-Sum of three Numbers=60
-```
+<img width="1089" height="486" alt="Screenshot 2025-09-08 115023" src="https://github.com/user-attachments/assets/9ff54107-3c3d-4e5c-8c94-03a26389b607" />
+
+
+
 
 ## Result:
+The program successfully demonstratesthe first function to perform addition, second function to perform subtraction, third function to perform multiplication and the fourth function to perform division.
 
-<img width="853" height="417" alt="image" src="https://github.com/user-attachments/assets/c0a0d761-ad34-4ea2-86bd-5cc4f1be1dcc" />
 
