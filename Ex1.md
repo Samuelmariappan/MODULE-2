@@ -1,61 +1,71 @@
-# Ex.No1
-## Ex.Name: Write a C++ program to overload the (+) operator to add two Box objects and calculate their volume.
+# Ex.No:1
+# Ex.Name:Write a CPP program to overload the (+) operator to add two objects both the objects will have the details of a Box i.e their height, length, breadth, and calculate their volume and then using the overloaded operator Add the length, breadth and height of the two objects and store into another object and calculate the volume of the third object.
+## Date:14/08/25
 
 ## Aim:
-To overload the (+) operator to add two Box objects, calculate their individual volumes, and also calculate the volume of the resulting Box.
+To write a CPP program to overload the (+) operator to add two objects both the objects will have the details of a Box i.e their height, length, breadth, and calculate their volume and then using the overloaded operator Add the length, breadth and height of the two objects and store into another object and calculate the volume of the third object.
+
 
 ## Algorithm:
-1. Start the program.  
-2. Create a class `Box` with data members length, breadth, height.  
-3. Create a parameterized constructor to initialize the Box.  
-4. Write a function to calculate and return the volume.  
-5. Overload the (+) operator to add corresponding dimensions of two objects and return a new object.  
-6. In `main()`, create two Box objects with values, calculate their volumes, and then use the overloaded operator to get a third Box.  
-7. Print all volumes.  
-8. End the program.  
+1. Start
+2. Define a class Box with data members: length, breadth, height.
+3. Add a constructor to initialize these values.
+4. Define a function calculateVolume() that returns length * breadth * height.
+5. Overload the + operator to add the length, breadth, and height of two Box objects and return a new Box object.
+6. In main():Create two objects (Box1 and Box2) with some values.
+7. Display their dimensions and volumes.
+8. Use the overloaded + operator to add Box1 and Box2 → store result in Box3.
+9. Display dimensions and volume of Box3.
+10. End.
 
 ## Program:
 ```cpp
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-class Box {
-    float length, breadth, height;
-public:
-    Box(float l=0, float b=0, float h=0) {
-        length = l; breadth = b; height = h;
+class box
+{
+    public:
+    float length,breadth,height;
+    float Volume()
+    {
+        float volume;
+        volume=length*breadth*height;
+        return volume;
     }
-    float volume() {
-        return length * breadth * height;
+    box operator+(box b4)
+    {
+        box b5;
+        b5.length=length+b4.length;
+        b5.breadth=breadth+b4.breadth;
+        b5.height=height+b4.height;
+        return b5;
     }
-    Box operator+(Box &b) {
-        return Box(length + b.length, breadth + b.breadth, height + b.height);
-    }
+    
 };
-
-int main() {
-    float l1,b1,h1,l2,b2,h2;
-    cin >> l1 >> b1 >> h1;
-    cin >> l2 >> b2 >> h2;
-
-    Box b1Obj(l1,b1,h1);
-    Box b2Obj(l2,b2,h2);
-    Box b3Obj = b1Obj + b2Obj;
-
-    cout << "Volume of Box1 : " << b1Obj.volume() << endl;
-    cout << "Volume of Box2 : " << b2Obj.volume() << endl;
-    cout << "Volume of Box3 : " << b3Obj.volume() << endl;
-
-    return 0;
+int main()
+{
+    float vol;
+    box b1,b2,b3;
+    cin>>b1.length>>b1.breadth>>b1.height;
+    cin>>b2.length>>b2.breadth>>b2.height;
+    b3=b1+b2;
+    vol=b1.Volume();
+    cout<<"Volume of Box1 : "<<vol<<endl;
+    vol=b2.Volume();
+    cout<<"Volume of Box2 : "<<vol<<endl;
+    vol=b3.Volume();
+    cout<<"Volume of Box3 : "<<vol<<endl;
 }
+
+
 ```
+
+
 
 ## Output:
-```
-Volume of Box1 : 210
-Volume of Box2 : 24
-Volume of Box3 : 729
-```
+<img width="1188" height="437" alt="Screenshot 2025-09-08 111802" src="https://github.com/user-attachments/assets/52f1d4d7-949f-44dc-a4c1-27a2dc84109a" />
+
 
 ## Result:
-<img width="1179" height="489" alt="image" src="https://github.com/user-attachments/assets/f2dddd22-57d3-48e9-a2b6-624d4f705ca2" />
+The program successfully demonstrates function overloading operator Add the length, breadth and height of the two objects and store into another object and calculate the volume of the third object.
+
